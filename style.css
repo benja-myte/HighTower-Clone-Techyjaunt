@@ -1,0 +1,1202 @@
+/*====================
+    ANIMATIONS
+====================*/
+
+/* Slide-in Animations */
+@keyframes slideInLeft {
+  from { transform: translateX(-60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(60px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Animation Classes */
+.slide-in-left, 
+.slide-in-right, 
+.slide-in-up {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.4,0,0.2,1);
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+.slide-in-left { animation-name: slideInLeft; }
+.slide-in-right { animation-name: slideInRight; }
+.slide-in-up { animation-name: slideInUp; }
+
+/* Animation States */
+.slide-in-left.visible,
+.slide-in-right.visible,
+.slide-in-up.visible {
+  animation-play-state: running;
+}
+
+/* Scroll Reveal Effects */
+.reveal-on-scroll {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+}
+
+/*====================
+    BASE STYLES
+====================*/
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography */
+body {
+  color: #000000;
+  background-color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+
+
+
+/*====================
+    NAVIGATION
+====================*/
+
+/* Main Navigation Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styles */
+.navbar .logo a {
+  font-size: 28px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #005fff;
+  z-index: 1001;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #005fff;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+/* Navigation Menu */
+.navbar nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Menu List */
+.navbar ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu Links */
+.navbar ul li a {
+  color: #005fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 8px 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Menu Link Underline Animation */
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #005fff;
+  transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+.book-trip-btn {
+  padding: 12px 30px;
+  background-color: #fff;
+  color: #005fff;
+  border-radius: 30px;
+  border: 2px solid #005fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.book-trip-btn:hover {
+  background-color: #005fff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Mobile menu active state */
+.nav-active {
+  display: flex !important;
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 15px 4%;
+  }
+  
+  .navbar ul {
+    gap: 20px;
+  }
+  
+  .navbar ul li a {
+    font-size: 14px;
+  }
+  
+  .book-trip-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 5%;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    order: 2;
+  }
+
+  .navbar .logo {
+    order: 0;
+  }
+
+  .book-trip-btn {
+    order: 1;
+    margin: 0 auto;
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+  
+  .navbar nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 80px 0 30px;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    order: 3;
+    width: 100%;
+  }
+  
+  .navbar nav.nav-active {
+    transform: translateY(0);
+  }
+  
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .navbar ul li a {
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    color: #005fff;
+    opacity: 1;
+    font-weight: 600;
+  }
+}
+
+
+
+/*====================
+    HERO SECTION
+====================*/
+
+/* Hero Container */
+.hero {
+  width: 100%;
+  height: 100vh;
+  padding: 1% 2%;
+  overflow: hidden;
+}
+
+/* Hero Background */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  background-image: url(images/header-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  padding: 2% 2%;
+  display: flex;
+}
+
+/* Hero Left Content */
+.hero-content1 {
+  width: 40%;
+  padding: 5% 2%;
+}
+
+/* Hero Subtitle */
+.hero-content1 p {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #2b2b2b;
+}
+
+/* Hero Title */
+.hero-content1 h1 {
+  font-size: 65px;
+  letter-spacing: 1px;
+  line-height: 85px;
+  margin-top: 20px;
+}
+
+/* Hero Title Spans */
+.hero-content1 .hero-span1 {
+  color: white;
+}
+
+.hero-content1 .hero-span2 {
+  color: #005fff;
+}
+
+/* Hero Button */
+.hero-content1 button {
+  padding: 15px 35px;
+  background-color: #005fff;
+  color: #fff;
+  border-radius: 30px;
+  border: 1px solid #005fff;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+/* Hero Icon Link */
+.hero-content1 a {
+  padding: 15px 20px;
+  margin-left: 10px;
+  background-color: #fff;
+  color: #005fff;
+  font-size: 24px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.hero-content2{
+  width: 60%;
+}
+
+.hero-content span {
+  color: #005fff;
+}
+
+
+/*====================
+    POPULAR SECTION
+====================*/
+
+/* Section Container */
+.popular {
+  width: 100%;
+  padding: 5% 5%;
+}
+
+/* Section Title */
+.popular-title {
+  width: 100%;
+  text-align: center;
+}
+
+.popular-title h2 {
+  font-size: 24px;
+}
+
+.popular-title p {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Destinations Grid */
+.destinations {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Card Container */
+.card-box {
+  width: 25%;
+  padding: 2% 2%;
+  cursor: pointer;
+}
+
+/* Card Image Container */
+.image-placeholder {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Card Image */
+.image-placeholder img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #2b2b2b46;
+  transition: all 0.5s;
+}
+
+/* Card Image Hover Effect */
+.image-placeholder img:hover {
+  transform: scale(1.05);
+}
+
+.card-div{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.card-text{
+  width: 65%;
+}
+
+.card-text h3{
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 25px;
+}
+
+.card-text p{
+  margin-top: 5px;
+  font-size: 14px;
+  color: #2b2b2b;
+}
+
+.card-rate{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-rate span{
+  background-color: #005fff;
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+
+/*====================
+    JOURNEY SECTION
+====================*/
+
+/* Section Container */
+.journey-sect {
+  width: 100%;
+  padding: 5% 5%;
+}
+
+/* Section Title */
+.journey-title {
+  width: 100%;
+}
+
+.journey-title h1 {
+  margin-bottom: 5px;
+}
+
+/* Journey Grid */
+.journey-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.journey-overflow-box{
+  width: 30%;
+  height: 215px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.journey-card{
+  position: relative;
+  width: 100%;
+  /* height: 150px; */
+  padding: 5% 5%;
+  background-color: #ebebeb;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.journey-card i{
+  font-size: 24px;
+  color: #005fff;
+}
+
+.journey-card p{
+  margin-top: 10px;
+  font-size: 16px;
+  color: #000000;
+  font-weight: 600;
+  margin-top: 60px;
+}
+
+.journey-card:hover .journey-sub-card{
+  bottom: 0;
+}
+
+.journey-sub-card{
+  /* display: none; */
+  position: absolute;
+  bottom: -220px;
+  left: 0;
+  width: 100%;
+  padding: 5% 5%;
+  background-color: #005fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: all 0.5s;
+}
+
+.journey-sub-card i{
+  font-size: 14px;
+  color: #fff;
+  padding: 12px 15px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.journey-sub-card h3{
+  margin-top: 20px;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.journey-sub-card p{
+  margin: 10px 0px 30px 0px;
+  font-size: 12px;
+  color: #ffffff;
+  margin-top: 10px;
+  line-height: 13px;
+}
+
+
+/*====================
+    UNLEASH SECTION
+====================*/
+
+/* Main Container */
+.unleash-sect {
+  width: 100%;
+  padding: 10% 5%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Image Section */
+.unleash-img {
+  width: 30%;
+}
+
+.unleash-img img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px #2b2b2b46;
+}
+
+/* Content Section */
+.unleash-text {
+  width: 60%;
+  padding: 5% 2%;
+}
+
+.unleash-text h1{
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.unleash-text p{
+  font-size: 12px;
+  text-align: justify;
+}
+
+.unleash-text div{
+  width: 100%;
+  padding: 15px 0px;
+  margin-top: 40px;
+  border-radius: 10px;
+  background-image: url(images/header-bg.jpg);
+  background-position: center;
+}
+
+.unleash-text div h3{
+  font-size: 18px;
+  text-align: center;
+}
+
+
+.unleash-sect2{
+  width: 100%;
+  padding: 10% 5%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.unleash-sect2-box{
+  width: 250px;
+  padding: 30px 30px;
+  text-align: center;
+  background-color: #ebebeb;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.unleash-sect2-box h1{
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  color: #005fff;
+}
+
+.unleash-sect2-box p{
+  font-size: 14px;
+  color: #5f5f5f;
+  margin-top: 10px;
+}
+
+
+
+/*====================
+    DISCOVER SECTION
+====================*/
+
+/* Section Container */
+.discover-sect {
+  width: 100%;
+  padding: 10% 5%;
+}
+
+/* Section Title */
+.discover-title {
+  width: 100%;
+}
+
+.discover-title h1 {
+  margin-bottom: 5px;
+}
+
+/* Card Grid */
+.discover-box {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  gap: 30px;
+}
+
+.discover-card{
+  width: 300px;
+  padding: 40px 20px;
+  text-align: center;
+  border: 1px dotted #005fff;
+  border-radius: 20px;
+}
+
+.discover-card i{
+  font-size: 20px;
+  padding: 10px;
+  background-color: #bad4ff;
+  color: #005fff;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.discover-card h4{
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.discover-card p{
+  font-size: 16px;
+  color: #000000;
+}
+
+
+/*====================
+    TESTIMONIAL SECTION
+====================*/
+
+/* Section Container */
+.testimonial-sect {
+  width: 100%;
+  padding: 10% 5%;
+}
+
+/* Section Title */
+.testimonial-title {
+  width: 100%;
+}
+
+.testimonial-title h1 {
+  margin-bottom: 5px;
+}
+
+/* Testimonial Slider */
+.testimonial-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  overflow-x: scroll;
+}
+
+/* .testimonial-card{
+  
+} */
+
+.testimonial-box {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.testimonial-box::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.testimonial-card {
+  max-width: 350px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 5px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  /* Add your card styling here or keep existing */
+}
+
+.testimonial-card:hover{
+  background-color: #005fff;
+}
+
+.t-card{
+  background-color: #ffff;
+  padding: 10px ;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.t-card i{
+  color: #005fff;
+  margin-bottom: 20px;
+}
+
+.t-card p{
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.t-card2{
+  display: flex;
+}
+
+.t-img{
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.t-img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.t-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: last baseline;
+  margin-left: 20px;
+}
+
+.t-text h3{
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.t-text p{
+  font-size: 14px;
+  font-weight: 600;
+  color: #5f5f5f;
+}
+
+.testimonial-card:hover .t-text h3{
+  color: #ffff;
+}
+
+.testimonial-card:hover .t-text p{
+  color: #ffff;
+}
+
+
+/*====================
+    FOOTER SECTION
+====================*/
+
+/* Footer Container */
+.footer {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 2% 5%;
+}
+
+/* Footer Grid */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+}
+
+/* Footer Columns */
+.footer-section {
+  margin: 20px;
+}
+
+.footer .about{
+  width: 350px;
+}
+
+.footer .about 
+
+.footer .links{
+  width: 150px;
+  padding: 20px;
+}
+
+.footer .contact{
+  width: 200px;
+}
+
+.footer .contact p{
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.footer .contact p:hover{
+  color: #005fff;
+}
+
+.footer .contact p i{
+  margin-right: 10px;
+}
+
+.footer .subscribe{
+  width: 250px;
+}
+
+.footer h2{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.footer h3 {
+  font-weight: 600;
+  margin: 10px 0 25px 0;
+}
+
+.footer p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-section ul li a:hover {
+  color: #007bff;
+}
+
+/* Social Icons */
+.social-icons{
+  margin-top: 20px;
+}
+.social-icons a {
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 30px;
+  color: #007bff;
+}
+
+.social-icons a:hover {
+  color: #0056b3;
+}
+
+/* Subscribe Form */
+.subscribe form {
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe input {
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.subscribe button {
+  padding: 10px;
+  background-color: #2d8cff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.subscribe button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #777;
+}
+
+/*====================
+    RESPONSIVE DESIGN
+====================*/
+
+/*--------------------
+    Tablet Styles
+    (768px to 1024px)
+--------------------*/
+@media screen and (max-width: 1024px) {
+  /* Navigation */
+  .navbar {
+    padding: 20px 4%;
+  }
+  
+  .navbar ul {
+    gap: 15px;
+  }
+  
+  .navbar ul li a {
+    font-size: 16px;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: auto;
+    min-height: 80vh;
+  }
+
+  .hero-image {
+    flex-direction: column;
+    padding: 5%;
+    height: auto;
+  }
+
+  .hero-content1 {
+    width: 100%;
+    text-align: center;
+    padding: 5% 0;
+  }
+
+  .hero-content1 h1 {
+    font-size: 48px;
+    line-height: 60px;
+  }
+
+  .hero-content2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-content2 img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  /* Popular Section */
+  .destinations {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .card-box {
+    width: 45%;
+  }
+
+  /* Journey Section */
+  .journey-overflow-box {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+
+  /* Unleash Section */
+  .unleash-sect {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .unleash-img {
+    width: 60%;
+  }
+
+  .unleash-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Discover Section */
+  .discover-box {
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .discover-card {
+    width: 45%;
+  }
+
+  /* Footer */
+  .footer-container {
+    gap: 30px;
+  }
+
+  .footer .about {
+    width: 100%;
+  }
+
+  .footer .links,
+  .footer .contact,
+  .footer .subscribe {
+    width: 30%;
+  }
+}
+
+/*--------------------
+    Mobile Styles
+    (up to 767px)
+--------------------*/
+@media screen and (max-width: 767px) {
+  /* Navigation */
+  .navbar {
+    padding: 15px 4%;
+    position: relative;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    order: 2;
+  }
+
+  .navbar .logo {
+    order: 0;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar nav.nav-active {
+    display: block;
+  }
+
+  .navbar ul {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  .book-trip-btn {
+    order: 1;
+    padding: 10px 25px !important;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 2%;
+  }
+
+  .hero-image {
+    border-radius: 25px;
+  }
+
+  .hero-content1 h1 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .hero-content1 button {
+    padding: 12px 25px;
+  }
+
+  /* Popular Section */
+  .card-box {
+    width: 100%;
+    padding: 4%;
+  }
+
+  /* Journey Section */
+  .journey-overflow-box {
+    width: 100%;
+  }
+
+  .journey-card {
+    height: auto;
+  }
+
+  /* Unleash Section */
+  .unleash-img {
+    width: 100%;
+  }
+
+  .unleash-text h1 {
+    font-size: 32px;
+  }
+
+  .unleash-sect2-box {
+    width: 100%;
+  }
+
+  /* Discover Section */
+  .discover-card {
+    width: 100%;
+  }
+
+  /* Testimonial Section */
+  .testimonial-card {
+    max-width: 100%;
+  }
+
+  /* Footer */
+  .footer .links,
+  .footer .contact,
+  .footer .subscribe {
+    width: 100%;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    display: flex;
+  }
+}
