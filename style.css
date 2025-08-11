@@ -976,7 +976,7 @@ body {
   .navbar{
     position: fixed;
     background-color: #005fff;
-    padding-right: 10%;
+    width: 100vw;
   }
 
   .navbar .logo a{
