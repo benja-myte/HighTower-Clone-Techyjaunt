@@ -16,47 +16,47 @@
   
   <!-- Scripts -->
   <script src="https://kit.fontawesome.com/8d8e864534.js" crossorigin="anonymous"></script>
-  <script src="script-slide.js" defer></script>
   <script src="mobile-menu.js" defer></script>
 </head>
 <body>
 
   <!-- Main Navigation -->
-  <header class="navbar reveal-on-scroll">
-    <div class="logo slide-in-left">
+  <header class="navbar">
+    <div class="logo">
       <a href="/" aria-label="HighTowers Home">HighTowers</a>
     </div>
 
-    <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <nav aria-label="Main navigation">
-      <ul class="slide-in-right" id="nav-menu">
+    <nav aria-label="Main navigation" id="nav-menu">
+      <ul>
         <li><a href="#hero" aria-current="page">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#tour">Tour</a></li>
         <li><a href="#packages">Packages</a></li>
         <li><a href="#contact">Contact</a></li>
+    <button class="book-trip-btn" id="mobile-book-trip" aria-label="Book a trip">BOOK TRIP</button>
       </ul>
     </nav>
 
-    <button class="book-trip-btn slide-in-up" aria-label="Book a trip">BOOK TRIP</button>
+    <button class="book-trip-btn" aria-label="Book a trip">BOOK TRIP</button>
+    <div class="toggle-icons">
+      <i class="fa-solid fa-bars hamburger-menu" aria-label="Open menu" id="show-menu" onclick="openMenu()"></i>
+      <i class="fa-solid fa-xmark close-menu" aria-label="Close menu" id="hide-menu" onclick="closeMenu()"></i>
+    </div>
 
   </header>
 
-  <section class="hero reveal-on-scroll">
+  <section class="hero">
 
     <div class="hero-image">
 
-      <div class="hero-content1 slide-in-left">
+      <div class="hero-content1">
         <p>Elevate your travel journey</p>
         <h1>Experience <br> The Magic Of <br> <span class="hero-span1">Flight</span><span class="hero-span2">!</span></h1>
         <button>Book A Trip Now</button> <a href="#"><i class="fa-solid fa-circle-play"></i></a>
       </div>
 
       <div class="hero-content2">
-        <img src="images/header.png" alt="" class="slide-in-right">
+        <img src="images/header.png" alt="">
       </div>
 
     </div>
@@ -65,9 +65,9 @@
 
   <!-- PORPULAR SECTION -->
 
-  <section class="popular reveal-on-scroll">
+  <section class="popular">
 
-    <div class="popular-title slide-in-up">
+    <div class="popular-title">
       <h2>Popular Destination</h2>
       <p>Discover the Most Loved Destinations Around the Globe</p>
     </div>
@@ -77,18 +77,18 @@
       <!-- Card box1 -->
       <div class="card-box">
 
-        <div class="image-placeholder slide-in-left">
+        <div class="image-placeholder">
           <img src="images/destination-1.jpg">
         </div>
 
         <div class="card-div">
-          <div class="card-text slide-in-up">
+          <div class="card-text">
             <h3>Tradition and Futurism</h3>
             <p>New York City, USA</p>
           </div>
 
           <div class="card-rate">
-            <span class="slide-in-right"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span><i class="fa-solid fa-star"></i> 4.7</span>
           </div>
 
         </div>
@@ -145,9 +145,9 @@
 
   <!-- Journey Section -->
 
-  <section class="journey-sect reveal-on-scroll">
+  <section class="journey-sect">
 
-    <div class="journey-title slide-in-up">
+    <div class="journey-title">
       <h1>Journey To The Sky Made Simple!</h1>
       <p>Effortless Planning for Your Next Adventure</p>
     </div>
@@ -159,13 +159,13 @@
       <div class="journey-overflow-box">
 
         <div class="journey-card">
-          <i class="fa-regular fa-bookmark slide-in-left"></i>
-          <p class="slide-in-up">Seamless Booking Process</p>
+          <i class="fa-regular fa-bookmark"></i>
+          <p class="">Seamless Booking Process</p>
 
           <div class="journey-sub-card">
-            <i class="fa-regular fa-bookmark slide-in-left"></i>
-            <h3 class="slide-in-up">Easy Reservations, One Click Away</h3>
-            <p class="slide-in-right">From flights and accommodations to activities and transfers, everything you need is available at your fingertips, making travel planning effortless.</p>
+            <i class="fa-regular fa-bookmark"></i>
+            <h3 class="">Easy Reservations, One Click Away</h3>
+            <p class="">From flights and accommodations to activities and transfers, everything you need is available at your fingertips, making travel planning effortless.</p>
           </div>
 
         </div>
@@ -216,17 +216,17 @@
   <!-- UNLEASH SECTION -->
 
 
-  <section class="unleash-sect reveal-on-scroll">
+  <section class="unleash-sect">
 
-    <div class="unleash-img slide-in-left">
-      <img src="images/showcase.jpg" class="slide-in-up">
+    <div class="unleash-img">
+      <img src="images/showcase.jpg">
     </div>
 
     <div class="unleash-text">
-      <h1 class="slide-in-right">UNLEASH WANDERLUST WITH HIGHTOWERS</h1>
-      <P class="slide-in-up">Embark on a journey like no other with Skywings, where your travel dreams come to life. Our mission is to inspire and facilitate your adventures, whether you seek the vibrant energy of bustling cityscapes, the serene beauty of pristine beaches, or the captivating history of ancient landmarks. At Skywings, we provide expertly curated destinations and personalized itineraries, ensuring that every trip is tailored to your unique preferences. Discover hidden gems, immerse yourself in diverse cultures, and create unforgettable memories that will last a lifetime.</P> <br>
-      <P class="slide-in-up">With Skywings as your ultimate travel companion, exploring the wonders of the world has never been easier. Our insider tips and local insights give you the tools to navigate new places with confidence and excitement. From the moment you start planning to the day you return home, we are dedicated to making your travel experience seamless and enriching.</P>
-      <div class="slide-in-left">
+      <h1 class="">UNLEASH WANDERLUST WITH HIGHTOWERS</h1>
+      <P class="">Embark on a journey like no other with Skywings, where your travel dreams come to life. Our mission is to inspire and facilitate your adventures, whether you seek the vibrant energy of bustling cityscapes, the serene beauty of pristine beaches, or the captivating history of ancient landmarks. At Skywings, we provide expertly curated destinations and personalized itineraries, ensuring that every trip is tailored to your unique preferences. Discover hidden gems, immerse yourself in diverse cultures, and create unforgettable memories that will last a lifetime.</P> <br>
+      <P class="">With Skywings as your ultimate travel companion, exploring the wonders of the world has never been easier. Our insider tips and local insights give you the tools to navigate new places with confidence and excitement. From the moment you start planning to the day you return home, we are dedicated to making your travel experience seamless and enriching.</P>
+      <div class="">
         <h3>Book A Flight Now <i class="fa-solid fa-arrow-right"></i> </h3>
       </div>
     </div>
@@ -237,9 +237,9 @@
   <!-- UNLEASH SECTION TWO -->
 
 
-  <section class="unleash-sect2 reveal-on-scroll">
+  <section class="unleash-sect2">
 
-    <div class="unleash-sect2-box slide-in-left">
+    <div class="unleash-sect2-box">
       <h1>10+</h1>
       <p>Years Experience</p>
     </div>
@@ -259,9 +259,9 @@
 
   <!-- DISCOVER SECTION -->
 
-  <section class="discover-sect reveal-on-scroll">
+  <section class="discover-sect">
 
-    <div class="discover-title slide-in-up">
+    <div class="discover-title">
       <h1>Discover The World From Above</h1>
       <p>Experience Breathtaking Views and Unique Perspectives</p>
     </div>
@@ -271,9 +271,9 @@
       <!-- discover card 1 -->
 
       <div class="discover-card">
-        <i class="fa-brands fa-chrome slide-in-left"></i>
-        <h4 class="slide-in-up">Aerial <br> Cityscapes</h4>
-        <p class="slide-in-right">Witness the architectural marvels and bustling streets from bird's-eye view, offering a unique perspective.</p>
+        <i class="fa-brands fa-chrome"></i>
+        <h4 class="">Aerial <br> Cityscapes</h4>
+        <p class="">Witness the architectural marvels and bustling streets from bird's-eye view, offering a unique perspective.</p>
       </div>
 
       <!-- discover card 2 -->
@@ -301,9 +301,9 @@
 
   <!-- TESTIMONIAL SECTION -->
 
-  <section class="testimonial-sect reveal-on-scroll">
+  <section class="testimonial-sect">
 
-    <div class="testimonial-title slide-in-up">
+    <div class="testimonial-title">
       <h1>Loved By Over Thousand Travelers</h1>
       <p>Discover the stories of wanderlust and cherished memories through the eyes of our valued clients.</p>
     </div>
@@ -314,7 +314,7 @@
 
       <div class="testimonial-card">
 
-        <div class="t-card slide-in-left">
+        <div class="t-card">
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
@@ -328,12 +328,12 @@
         <div class="t-card2">
 
           <div class="t-img">
-            <img src="images/client-1.jpg" class="slide-in-up">
+            <img src="images/client-1.jpg">
           </div>
 
           <div class="t-text">
-            <h3 class="slide-in-right">John Doe</h3>
-            <p class="slide-in-up">Business Traveler</p>
+            <h3 class="">John Doe</h3>
+            <p class="">Business Traveler</p>
           </div>
 
         </div>
@@ -440,8 +440,8 @@
   <!-- FOOTER SECTION -->
 
    <!-- Footer Section -->
-  <footer class="footer reveal-on-scroll">
-    <div class="footer-container slide-in-up">
+  <footer class="footer">
+    <div class="footer-container">
 
       <!-- Left: Logo and About -->
       <div class="footer-section about">
