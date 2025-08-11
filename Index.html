@@ -1,5 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="animate.css">
+  
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/8d8e864534.js" crossorigin="anonymous"></script>
+  <script src="mobile-menu.js" defer></script>
+  <script src="animations.js" defer></script>
+</head> lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,13 +55,13 @@
 
     <div class="hero-image">
 
-      <div class="hero-content1">
+      <div class="hero-content1" data-animate="fade-up">
         <p>Elevate your travel journey</p>
         <h1>Experience <br> The Magic Of <br> <span class="hero-span1">Flight</span><span class="hero-span2">!</span></h1>
         <button>Book A Trip Now</button> <a href="#"><i class="fa-solid fa-circle-play"></i></a>
       </div>
 
-      <div class="hero-content2">
+      <div class="hero-content2" data-animate="fade-left">
         <img src="images/header.png" alt="">
       </div>
 
@@ -67,15 +73,15 @@
 
   <section class="popular">
 
-    <div class="popular-title">
+    <div class="popular-title" data-animate="fade-up">
       <h2>Popular Destination</h2>
       <p>Discover the Most Loved Destinations Around the Globe</p>
     </div>
 
-    <div class="destinations">
+    <div class="destinations" data-animate-children>
 
       <!-- Card box1 -->
-      <div class="card-box">
+      <div class="card-box reveal-on-scroll fade-up">
 
         <div class="image-placeholder">
           <img src="images/destination-1.jpg">
@@ -147,7 +153,7 @@
 
   <section class="journey-sect">
 
-    <div class="journey-title">
+    <div class="journey-title" data-animate="fade-left">
       <h1>Journey To The Sky Made Simple!</h1>
       <p>Effortless Planning for Your Next Adventure</p>
     </div>
@@ -156,7 +162,7 @@
 
       <!-- overflow-box 1 -->
 
-      <div class="journey-overflow-box">
+      <div class="journey-overflow-box" data-animate="fade-up">
 
         <div class="journey-card">
           <i class="fa-regular fa-bookmark"></i>
@@ -174,7 +180,7 @@
 
       <!-- overflow-box 2 -->
 
-      <div class="journey-overflow-box">
+      <div class="journey-overflow-box" data-animate="fade-down">
 
         <div class="journey-card">
           <i class="fa-solid fa-mountain-sun fa-flip-horizontal"></i>
@@ -192,7 +198,7 @@
 
       <!-- oveerflow-box 3 -->
 
-      <div class="journey-overflow-box">
+      <div class="journey-overflow-box" data-animate="fade-right">
 
         <div class="journey-card">
           <i class="fa-regular fa-map"></i>
@@ -218,11 +224,11 @@
 
   <section class="unleash-sect">
 
-    <div class="unleash-img">
+    <div class="unleash-img" data-animate="fade-left">
       <img src="images/showcase.jpg">
     </div>
 
-    <div class="unleash-text">
+    <div class="unleash-text" data-animate="fade-right">
       <h1 class="">UNLEASH WANDERLUST WITH HIGHTOWERS</h1>
       <P class="">Embark on a journey like no other with Skywings, where your travel dreams come to life. Our mission is to inspire and facilitate your adventures, whether you seek the vibrant energy of bustling cityscapes, the serene beauty of pristine beaches, or the captivating history of ancient landmarks. At Skywings, we provide expertly curated destinations and personalized itineraries, ensuring that every trip is tailored to your unique preferences. Discover hidden gems, immerse yourself in diverse cultures, and create unforgettable memories that will last a lifetime.</P> <br>
       <P class="">With Skywings as your ultimate travel companion, exploring the wonders of the world has never been easier. Our insider tips and local insights give you the tools to navigate new places with confidence and excitement. From the moment you start planning to the day you return home, we are dedicated to making your travel experience seamless and enriching.</P>
@@ -239,17 +245,17 @@
 
   <section class="unleash-sect2">
 
-    <div class="unleash-sect2-box">
+    <div class="unleash-sect2-box" data-animate="fade-left">
       <h1>10+</h1>
       <p>Years Experience</p>
     </div>
 
-    <div class="unleash-sect2-box">
+    <div class="unleash-sect2-box" data-animate="fade-up">
       <h1 class="slide-in-up">12K</h1>
       <p class="slide-in-right">Happy Clients</p>
     </div>
 
-    <div class="unleash-sect2-box">
+    <div class="unleash-sect2-box" data-animate="fade-down">
       <h1 class="slide-in-up">4.8</h1>
       <p class="slide-in-right">Overall Ratings</p>
     </div>
@@ -261,7 +267,7 @@
 
   <section class="discover-sect">
 
-    <div class="discover-title">
+    <div class="discover-title" data-animate="fade-scale">
       <h1>Discover The World From Above</h1>
       <p>Experience Breathtaking Views and Unique Perspectives</p>
     </div>
@@ -270,7 +276,7 @@
 
       <!-- discover card 1 -->
 
-      <div class="discover-card">
+      <div class="discover-card" data-animate="fade-scale">
         <i class="fa-brands fa-chrome"></i>
         <h4 class="">Aerial <br> Cityscapes</h4>
         <p class="">Witness the architectural marvels and bustling streets from bird's-eye view, offering a unique perspective.</p>
@@ -278,7 +284,7 @@
 
       <!-- discover card 2 -->
 
-      <div class="discover-card">
+      <div class="discover-card" data-animate="fade-scale">
         <i class="fa-solid fa-ship"></i>
         <h4>Aerial <br> Cityscapes</h4>
         <p>Witness the architectural marvels and bustling streets from bird's-eye view, offering a unique perspective.</p>
@@ -286,7 +292,7 @@
 
       <!-- discover card 3 -->
 
-      <div class="discover-card">
+      <div class="discover-card" data-animate="fade-scale">
         <i class="fa-solid fa-mountain-sun fa-flip-horizontal"></i>
         <h4>Aerial <br> Cityscapes</h4>
         <p>Witness the architectural marvels and bustling streets from bird's-eye view, offering a unique perspective.</p>
@@ -303,7 +309,7 @@
 
   <section class="testimonial-sect">
 
-    <div class="testimonial-title">
+    <div class="testimonial-title" data-animate="fade-right">
       <h1>Loved By Over Thousand Travelers</h1>
       <p>Discover the stories of wanderlust and cherished memories through the eyes of our valued clients.</p>
     </div>
@@ -312,7 +318,7 @@
 
       <!-- discover card 1 -->
 
-      <div class="testimonial-card">
+      <div class="testimonial-card" data-animate="fade-up">
 
         <div class="t-card">
           <i class="fa-solid fa-star"></i>
@@ -342,7 +348,7 @@
 
       <!-- discover card 2 -->
 
-      <div class="testimonial-card">
+      <div class="testimonial-card" data-animate="fade-down">
 
         <div class="t-card">
           <i class="fa-solid fa-star"></i>
@@ -372,7 +378,7 @@
 
       <!-- discover card 3 -->
 
-      <div class="testimonial-card">
+      <div class="testimonial-card" data-animate="fade-right">
 
         <div class="t-card">
           <i class="fa-solid fa-star"></i>
@@ -403,7 +409,7 @@
 
       <!-- discover card 4 -->
 
-      <div class="testimonial-card">
+      <div class="testimonial-card" data-animate="fade-up">
 
         <div class="t-card">
           <i class="fa-solid fa-star"></i>
@@ -444,7 +450,7 @@
     <div class="footer-container">
 
       <!-- Left: Logo and About -->
-      <div class="footer-section about">
+      <div class="footer-section about" data-animate="fade-left">
         <h2>HighTowers</h2>
         <p>
           Explore the world with ease and excitement through our comprehensive travel platform. 
@@ -458,7 +464,7 @@
       </div>
 
       <!-- Middle: Quick Links -->
-      <div class="footer-section links">
+      <div class="footer-section links" data-animate="fade-up">
         <h3>Quick Links</h3>
         <ul>
           <li><a href="#">Home</a></li>
@@ -469,7 +475,7 @@
       </div>
 
       <!-- Contact Us -->
-      <div class="footer-section contact">
+      <div class="footer-section contact" data-animate="fade-right">
         <h3>Contact Us</h3>
         <p><i class="fas fa-phone"></i> +91 9876543210</p>
         <p><i class="fas fa-envelope"></i> info@highTowers</p>
@@ -477,7 +483,7 @@
       </div>
 
       <!-- Subscribe -->
-      <div class="footer-section subscribe">
+      <div class="footer-section subscribe" data-animate="fade-up">
         <h3>Subscribe</h3>
         <form>
           <input type="email" placeholder="Enter your email">
@@ -485,7 +491,7 @@
         </form>
       </div>
     </div>
-
+ 
     <div class="footer-bottom">
       <p>Copyright © 2025 Benjamin Udeh. All rights reserved.</p>
     </div>
