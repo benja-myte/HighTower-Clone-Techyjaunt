@@ -27,7 +27,6 @@ html, body {
 
 /* Main Navigation Container */
 .navbar {
-  border: 2px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +34,6 @@ html, body {
   background: white;
   position: fixed;
   width: 100%;
-  height: 80px;
   top: 0;
   left: 0;
   will-change: transform;
@@ -982,7 +980,7 @@ html, body {
 
   .navbar nav {
     position: fixed;
-    top: 80px;
+    top: 100%;
     left: 100%;
     width: 100%;
     background-color: #005fff;
