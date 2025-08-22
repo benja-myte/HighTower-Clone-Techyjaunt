@@ -1,7 +1,7 @@
-/* Import Google Font */
+/* Import web font from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
-/* CSS Variables for reusable values */
+/* Root variables for colors, spacing, and sizing */
 :root {
     --primary-color: #2887ff;
     --primary-color-dark: #2476da;
@@ -12,58 +12,58 @@
     --max-width: 1200px;
 }
 
-/* Reset padding and margin */
+/* Reset default box model spacing */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* Smooth scroll behavior */
+/* Enable smooth scrolling */
 html,
 body {
     scroll-behavior: smooth;
 }
 
-/* Basic body styles */
+/* Base typography */
 body {
     font-family: "DM Sans", sans-serif;
 }
 
-/* Logo styling */
+/* Brand logo styles */
 .logo {
     font-size: 1.75rem;
     font-weight: 800;
     color: var(--text-dark);
 }
 
-/* Image styling */
+/* Image defaults */
 img {
     display: flex;
     width: 100%;
 }
 
-/* Basic anchor tag styling */
+/* Anchor link defaults */
 a {
     text-decoration: none;
     transition: 0.3s;
 }
 
-/* Reset list styles */
+/* Unordered list reset */
 ul {
     list-style: none;
 }
 
-/* Navigation styles */
+/* Navigation layout and position */
 nav {
-    position: fixed; /* Make navigation fixed at the top */
+  position: fixed; /* Fixed to the top of the viewport */
     isolation: isolate;
     top: 0;
     width: 100%;
     z-index: 9; /* Ensure it stays above other elements */
 }
 
-/* Navigation header containing the logo and menu button */
+/* Navigation header container (logo + toggle) */
 .nav__header {
     padding: 1rem;
     width: 100%;
@@ -73,20 +73,20 @@ nav {
     background-color: var(--primary-color);
 }
 
-/* Logo within the navigation header */
+/* Logo styles inside nav header */
 .nav__logo .logo {
     font-size: 1.5rem;
     color: var(--white);
 }
 
-/* Menu button styling */
+/* Mobile menu toggle styles */
 .nav__menu__btn {
     font-size: 1.5rem;
     color: var(--white);
     cursor: pointer;
 }
 
-/* Navigation links styling */
+/* Collapsible navigation links (mobile) */
 .nav__links {
     position: absolute;
     bottom: 0;
@@ -103,12 +103,12 @@ nav {
     z-index: -1; /* Hidden behind other elements */
 }
 
-/* Opened state for navigation links */
+/* Visible state for mobile nav links */
 .nav__links.open {
     transform: translateY(100%);
 }
 
-/* Styling for each navigation link */
+/* Individual nav link appearance */
 .nav__links a {
     font-weight: 600;
     color: var(--white);
@@ -117,17 +117,17 @@ nav {
     transition: transform 0.3s ease-in-out; /* Smooth transition effect */
 }
 
-/* Hover effect for navigation links */
+/* Nav link hover transform */
 .nav__links a:hover {
     transform: scale(1.1); /* Scales up the element uniformly */
 }
 
-/* Hide the book trip button by default on smaller screens */
+/* Hide desktop CTA on small screens */
 .nav__btns {
     display: none;
 }
 
-/* Special styling for the last navigation link (Book Trip) */
+/* Emphasized style for the last nav item (Book Trip) */
 .nav__links li:last-child {
     background-color: var(--white);
     padding: 0.75rem 1.5rem;
@@ -136,7 +136,7 @@ nav {
     transition: all 0.3s ease-in-out;
 }
 
-/* Hover effect for the last navigation link */
+/* Hover state for the Book Trip nav item */
 .nav__links li:last-child:hover {
     background-color: transparent;
     border: 1px solid var(--white);
@@ -145,18 +145,18 @@ nav {
     border-radius: 5rem;
 }
 
-/* Styling the text color of the last link */
+/* Text color for Book Trip link */
 .nav__links li:last-child a {
     color: var(--primary-color);
     transition: all 0.3s ease-in-out;
 }
 
-/* Hover effect for the text color of the last link */
+/* Hover text color for Book Trip link */
 .nav__links li:last-child a:hover {
     color: var(--white);
 }
 
-/* Book trip button styling */
+/* Primary button styles */
 .btn {
     padding: 0.75rem 1.5rem;
     outline: none;
@@ -170,17 +170,18 @@ nav {
     cursor: pointer;
 }
 
-/* Hover effect for the button */
+/* Button hover state */
 .btn:hover {
     background-color: var(--primary-color-dark);
 }
 
+/* Section container wrapper */
 .section__container {
   max-width: var(--max-width);
   margin: auto;
   padding: 5rem 3rem;
 }
-/* Styles for the Hero Section */
+/* Hero section styles */
 header {
     margin-top: 5rem;
     padding-inline: 1rem;
@@ -203,9 +204,10 @@ header {
     background-repeat: no-repeat;
     border-radius: 3rem;
     z-index: -1;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay color */
+    background-color: rgba(0, 0, 0, 0.5); /* background overlay */
   }
   
+  /* Header grid container */
   .header__container {
     display: grid;
   }
@@ -214,6 +216,7 @@ header {
     padding: 4rem 1rem;
   }
   
+  /* Introductory paragraph in header */
   .header__content p {
     margin-bottom: 5px;
     font-size: 1rem;
@@ -222,6 +225,7 @@ header {
     text-align: center;
   }
   
+  /* Main hero heading */
   .header__content h1 {
     margin-bottom: 2rem;
     font-size: 4.5rem;
@@ -231,14 +235,17 @@ header {
     text-align: center;
   }
 
+  /* Highlighted hero text */
   .header__container h1 .hero__span {
     color: var(--white);
   }
   
+  /* Accent color for hero punctuation */
   .header__container h1 .hero__span__2 {
     color: var(--primary-color);
   }
   
+  /* Header action buttons */
   .header__btns {
     display: flex;
     align-items: center;
@@ -246,10 +253,12 @@ header {
     gap: 1rem;
   }
   
+  /* Primary hero CTA sizing */
   .header__btns .btn {
     padding: 1rem 2rem;
   }
   
+  /* Floating play button */
   .header__btns a {
     padding: 9px 13px;
     font-size: 1.5rem;
@@ -258,34 +267,38 @@ header {
     border-radius: 100%;
   }
   
+  /* Play button hover state */
   .header__btns a:hover {
     color: var(--white);
     background-color: var(--primary-color);
   }
 
 
+  /* Destination section header & description alignment */
   .destination__container :is(.section__header, .section__description) {
     text-align: left;
     margin-inline-start: unset;
-   
   }
 
 
 
 
+  /* Generic section heading spacing */
   .section__header {
     margin-top: 4.5rem;
-    
   }
 
+  /* Centered heading for destinations */
   .destination__container .section__header {
     text-align: center;
   }
 
+  /* Centered description for destinations */
   .destination__container .section__description {
     text-align: center;
   }
   
+  /* Grid layout for destination cards */
   .destination__grid {
     margin-top: 4rem;
     display: grid;
@@ -294,19 +307,23 @@ header {
     padding-right: 1rem;
   }
 
+  /* Destination card base */
   .destination__card {
     cursor: pointer;
   }
   
   
+  /* Destination image styling */
   .destination__card img {
     border-radius: 1.5rem;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
   }
+  /* Image hover zoom */
   .destination__card img:hover {
     transform: scale(1.05);
   }
+  /* Destination card details row */
   .destination__card__details {
     padding: 1rem;
     display: flex;
@@ -315,6 +332,7 @@ header {
     gap: 1rem;
   }
   
+  /* Destination title */
   .destination__card__details h4 {
     margin-bottom: 5px;
     font-size: 1.2rem;
@@ -322,10 +340,12 @@ header {
     columns: var(--text-dark);
   }
   
+  /* Destination subtitle */
   .destination__card__details p {
     columns: var(--text-light);
   }
   
+  /* Rating badge */
   .destination__rating {
     padding: 5px 10px;
     font-size: 0.9rem;
@@ -336,18 +356,21 @@ header {
     transition: 0.3s;
   }
   
+  /* Rating badge hover color */
   .destination__card:hover .destination__rating {
     background-color: var(--primary-color-dark);
   }
 
-  /* Journey card */
+  /* Journey cards */
 
+  /* Grid for journey feature cards */
   .journey__grid {
     margin-top: 2rem;
     display: grid;
     gap: 0 1rem;
   }
   
+  /* Individual journey card */
   .journey__card {
     position: relative;
     isolation: isolate;
@@ -355,10 +378,12 @@ header {
     overflow: hidden;
   }
 
+  /* Paragraph spacing for journey section */
   .journey__p {
     margin-bottom: 2rem;
   }
   
+  /* Journey card header background */
   .journey__card__bg {
     padding: 1.2rem;
     background-color: var(--extra-light);
@@ -366,6 +391,7 @@ header {
     border-top-left-radius: 1rem;
   }
   
+  /* Icon wrapper in journey card header */
   .journey__card__bg span {
     display: inline-block;
     margin-bottom: 4rem;
@@ -373,12 +399,14 @@ header {
     color: var(--primary-color);
   }
   
+  /* Journey header title */
   .journey__card__bg h4 {
     font-size: 1rem;
     font-weight: 600;
     color: var(--text-dark);
   }
   
+  /* Hidden card content that slides up on hover */
   .journey__card__content {
     position: absolute;
     top: 100%;
@@ -392,10 +420,12 @@ header {
     transition: 0.3s;
   }
   
+  /* Reveal content on hover */
   .journey__card:hover .journey__card__content {
     top: 0;
   }
   
+  /* Icon style inside revealed journey content */
   .journey__card__content span {
     display: inline-block;
     margin-bottom: 1rem;
@@ -406,6 +436,7 @@ header {
     border-radius: 100%;
   }
   
+  /* Title inside revealed content */
   .journey__card__content h4 {
     margin-bottom: 1rem;
     font-size: 0.9rem;
@@ -413,17 +444,20 @@ header {
     color: var(--white);
   }
   
+  /* Paragraph in revealed journey content */
   .journey__card__content p {
     color: var(--extra-light);
     font-size: 9px;
   }
 
+  /* Showcase layout */
   .showcase__container {
     display: grid;
     gap: 1rem;
     overflow: hidden;
   }
 
+  /* Showcase image styling */
   .showcase__image img {
     max-width: 400px;
     margin-inline: auto;
@@ -431,6 +465,7 @@ header {
   }
 
 
+  /* Showcase headline */
   .showcase__content h4 {
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -439,6 +474,7 @@ header {
     color: var(--text-dark);
   }
 
+  /* Showcase descriptive text */
   .showcase__content p {
     margin-bottom: 1rem;
     color: var(--text-light);
@@ -446,6 +482,7 @@ header {
     line-height: 1.1rem;
   }
   
+  /* CTA button inside showcase */
   .showcase__content .btn {
     width: 100%;
     margin-top: 1rem;
@@ -462,11 +499,13 @@ header {
 
 
   
+/* Stats banner layout */
 .banner__container {
   display: grid;
   gap: 2rem;
 }
 
+/* Individual banner card */
 .banner__card {
   padding: 2rem 1rem;
   text-align: center;
@@ -475,22 +514,26 @@ header {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Banner number styling */
 .banner__card h4 {
   font-size: 5rem;
   font-weight: 500;
   color: var(--primary-color);
 }
 
+/* Banner subtext */
 .banner__card p {
   color: var(--text-light);
 }
 
+/* Discover section grid */
 .discover__grid {
   margin-top: 4rem;
   display: grid;
   gap: 2rem;
 }
 
+/* Discover card appearance */
 .discover__card {
   padding: 2rem 1rem;
   text-align: center;

@@ -1,38 +1,38 @@
-// Get references to the menu button, navigation links, and menu button icon
+// Query DOM elements: menu toggle, nav links container, and menu icon
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
-const navItems = document.querySelectorAll("#nav-links a"); // Select all navigation items
+const navItems = document.querySelectorAll("#nav-links a"); // All navigation links
 
-// Add an event listener to the menu button for the click event
+// Toggle navigation open/closed on menu button click
 menuBtn.addEventListener("click", (e) => {
-    // Toggle the 'open' class on the navigation links to show/hide them
+    // Toggle 'open' class to expand/collapse nav links
     navLinks.classList.toggle("open");
 
-    // Check if the navigation links are open and change the menu button icon accordingly
+    // Update the menu icon based on nav open state
     const isOpen = navLinks.classList.contains("open");
     menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
 });
 
-// Add event listeners to each navigation item for the click event
+// Close the mobile menu when a navigation link is clicked
 navItems.forEach((item) => {
     item.addEventListener("click", (e) => {
-        // Close the menu after clicking on a nav item
+        // Remove open state and reset icon
         navLinks.classList.remove("open");
         menuBtnIcon.setAttribute("class", "ri-menu-line");
     });
 });
 
-// Add an event listener to the window for the resize event
+// Ensure menu state is reset when window is resized
 window.addEventListener("resize", (e) => {
-    // Ensure that the navigation links are hidden if the window is resized to a larger width
+    // Hide mobile nav and reset icon on wider screens
     if (window.innerWidth > 768) {
         navLinks.classList.remove("open");
         menuBtnIcon.setAttribute("class", "ri-menu-line");
     }
 });
 
-// ScrollReveal animations for hero section elements
+// ScrollReveal animation settings and targets
 const scrollRevealOption = {
     origin: "bottom",
     distance: "50px",
@@ -84,7 +84,7 @@ ScrollReveal().reveal(".discover__card", {
     interval: 500,
 });
 
-// Initialize Swiper
+// Initialize testimonial carousel (Swiper)
 const swiper = new Swiper(".swiper", {
     slidesPerView: 3,
     spaceBetween: 20,
